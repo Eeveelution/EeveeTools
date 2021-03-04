@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 #pragma warning disable 4014
 
 namespace EeveeTools.Servers.HTTP {
+    /// <summary>
+    /// Async HTTP Server which Allows for Fast Requests and Easy Usage
+    /// </summary>
     public class AsyncHttpServer {
         /// <summary>
         /// Http Listener, Runs the Server

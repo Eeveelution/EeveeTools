@@ -2,6 +2,9 @@ using System;
 using Fleck;
 
 namespace EeveeTools.Servers.WebSockets {
+    /// <summary>
+    /// WebSocket Server which is easy to Set Up and get Running
+    /// </summary>
     public abstract class WebSocketServer {
         protected readonly Fleck.WebSocketServer _webSocketServer;
 

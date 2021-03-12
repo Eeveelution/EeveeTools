@@ -11,6 +11,8 @@ namespace EeveeTools.Database {
             Dictionary<string, object> results = new();
             //Creates a new Connection
             await using MySqlConnection connection = new(Context.GetConnectionString());
+            //Open Connection
+            await connection.OpenAsync();
             //Creates a Command and assings the Command Text to desired Query
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = Query;
@@ -31,8 +33,27 @@ namespace EeveeTools.Database {
                     results.Add(column.ColumnName, values[i]);
                 }
             }
+            //Close Connection
+            await connection.CloseAsync();
             //Return Results
             return results;
+        }
+
+        public static async Task Insert(DatabaseContext Context, string Query, MySqlParameter[] Parameters = null) {
+            //Creates a new Connection
+            await using MySqlConnection connection = new(Context.GetConnectionString());
+            //Open Connection
+            await connection.OpenAsync();
+            //Creates a Command and assings the Command Text to desired Query
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = Query;
+            //Add Parameters if there arent any
+            if(Parameters != null)
+                command.Parameters.AddRange(Parameters);
+            //Execute Non Query
+            await command.ExecuteNonQueryAsync();
+            //Close Connection
+            await connection.CloseAsync();
         }
     }
 }

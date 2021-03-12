@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EeveeTools", "EeveeTools\EeveeTools.csproj", "{F43DA9A6-D0AC-4577-A330-BAAE1488127E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EeveeTools.TestApp", "EeveeTools.TestApp\EeveeTools.TestApp.csproj", "{91B05978-D00D-4759-8E13-400C323746F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{F43DA9A6-D0AC-4577-A330-BAAE1488127E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F43DA9A6-D0AC-4577-A330-BAAE1488127E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F43DA9A6-D0AC-4577-A330-BAAE1488127E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91B05978-D00D-4759-8E13-400C323746F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91B05978-D00D-4759-8E13-400C323746F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91B05978-D00D-4759-8E13-400C323746F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91B05978-D00D-4759-8E13-400C323746F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -22,16 +22,15 @@ namespace EeveeTools.Servers.TCP {
         /// <summary>
         /// Creates a TCP Server with Handlers at `Location`:`Port`
         /// </summary>
-        /// <param name="Location">Where to Run</param>
-        /// <param name="Port">At what Port</param>
-        /// <param name="ConnectionDataHandler">Handler for Connection Data</param>
-        /// <param name="ClientHandlerType">Handler for a Connection Open</param>
-        public TcpServer(string Location, short Port, Type ClientHandlerType) {
-            this._tcpListener       = new TcpListener(IPAddress.Parse(Location), Port);
+        /// <param name="location">Where to Run</param>
+        /// <param name="port">At what Port</param>
+        /// <param name="clientHandlerType">Handler for a Connection Open</param>
+        public TcpServer(string location, short port, Type clientHandlerType) {
+            this._tcpListener       = new TcpListener(IPAddress.Parse(location), port);
             this._cancellationToken = new CancellationTokenSource();
-            this._clientHandlerType = ClientHandlerType;
+            this._clientHandlerType = clientHandlerType;
             //Check if Type is valid
-            if (!ClientHandlerType.IsAssignableFrom(typeof(TcpClientHandler))) {
+            if (!clientHandlerType.IsAssignableFrom(typeof(TcpClientHandler))) {
                 //throw new Exception("You need to pass a class that is inherited by ClientHandler..");
             }
         }

@@ -6,19 +6,19 @@ using MySqlConnector;
 
 namespace EeveeTools.Database {
     public class DatabaseHandler {
-        public static async Task<IReadOnlyDictionary<string, object>> QueryAsync(DatabaseContext Context, string Query, MySqlParameter[] Parameters = null) {
+        public static async Task<IReadOnlyDictionary<string, object>> QueryAsync(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
             //This is where results will be stored
             Dictionary<string, object> results = new();
             //Creates a new Connection
-            await using MySqlConnection connection = new(Context.GetConnectionString());
+            await using MySqlConnection connection = new(context.GetConnectionString());
             //Open Connection
             await connection.OpenAsync();
             //Creates a Command and assings the Command Text to desired Query
             MySqlCommand command = connection.CreateCommand();
-            command.CommandText = Query;
+            command.CommandText = query;
             //Add Parameters if there arent any
-            if(Parameters != null)
-                command.Parameters.AddRange(Parameters);
+            if(parameters != null)
+                command.Parameters.AddRange(parameters);
             //Create Reader and get Schema
             await using MySqlDataReader reader = await command.ExecuteReaderAsync();
             ReadOnlyCollection<DbColumn> columns = await reader.GetColumnSchemaAsync();
@@ -39,17 +39,17 @@ namespace EeveeTools.Database {
             return results;
         }
 
-        public static async Task Insert(DatabaseContext Context, string Query, MySqlParameter[] Parameters = null) {
+        public static async Task Insert(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
             //Creates a new Connection
-            await using MySqlConnection connection = new(Context.GetConnectionString());
+            await using MySqlConnection connection = new(context.GetConnectionString());
             //Open Connection
             await connection.OpenAsync();
             //Creates a Command and assings the Command Text to desired Query
             MySqlCommand command = connection.CreateCommand();
-            command.CommandText = Query;
+            command.CommandText = query;
             //Add Parameters if there arent any
-            if(Parameters != null)
-                command.Parameters.AddRange(Parameters);
+            if(parameters != null)
+                command.Parameters.AddRange(parameters);
             //Execute Non Query
             await command.ExecuteNonQueryAsync();
             //Close Connection

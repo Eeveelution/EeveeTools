@@ -7,28 +7,28 @@ namespace EeveeTools.Extensions {
         /// <summary>
         /// Writes a String and Closes the Connection
         /// </summary>
-        /// <param name="Response">this Object</param>
-        /// <param name="String">What to Return</param>
+        /// <param name="response">this Object</param>
+        /// <param name="string">What to Return</param>
         /// <returns>awaitable Task</returns>
-        public static async Task WriteString(this HttpListenerResponse Response, string String) {
+        public static async Task WriteString(this HttpListenerResponse response, string @string) {
             //Convert String to byte[]
-            byte[] originalString = Encoding.UTF8.GetBytes(String);
+            byte[] originalString = Encoding.UTF8.GetBytes(@string);
             //Write Async
-            await Response.OutputStream.WriteAsync(originalString);
+            await response.OutputStream.WriteAsync(originalString);
             //Close Connection
-            Response.Close();
+            response.Close();
         }
         /// <summary>
         /// Sends a Byte Array of Data and Closes the Connection
         /// </summary>
-        /// <param name="Response">this Object</param>
-        /// <param name="Data">What to send Back</param>
+        /// <param name="response">this Object</param>
+        /// <param name="data">What to send Back</param>
         /// <returns>awaitable Task</returns>
-        public static async Task WriteBytes(this HttpListenerResponse Response, byte[] Data) {
+        public static async Task WriteBytes(this HttpListenerResponse response, byte[] data) {
             //Write Async
-            await Response.OutputStream.WriteAsync(Data);
+            await response.OutputStream.WriteAsync(data);
             //Close Connection
-            Response.Close();
+            response.Close();
         }
     }
 }

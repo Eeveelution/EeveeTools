@@ -24,15 +24,15 @@ namespace EeveeTools.Servers.HTTP {
         /// <summary>
         /// Creates a Async HTTP Server on `Location` and Invokes `AsyncRequestHandler` on Request
         /// </summary>
-        /// <param name="Location">Where to Run the Server</param>
-        /// <param name="AsyncRequestHandler">What method to call upon Recieving a Request</param>
-        public AsyncHttpServer(string Location, Func<string, HttpListenerContext, Task> AsyncRequestHandler) {
-            this._asyncRequestHandler = AsyncRequestHandler;
+        /// <param name="location">Where to Run the Server</param>
+        /// <param name="asyncRequestHandler">What method to call upon Recieving a Request</param>
+        public AsyncHttpServer(string location, Func<string, HttpListenerContext, Task> asyncRequestHandler) {
+            this._asyncRequestHandler = asyncRequestHandler;
 
             this._cancellationToken = new CancellationTokenSource();
 
             this._listener = new HttpListener();
-            this._listener.Prefixes.Add(Location);
+            this._listener.Prefixes.Add(location);
             this._listener.Start();
         }
         /// <summary>

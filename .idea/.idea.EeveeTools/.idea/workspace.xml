@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59b06552-40a3-4b8c-b385-6e0782b00cd5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EeveeTools/Servers/HTTP/AsyncHttpServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EeveeTools/Servers/HTTP/AsyncHttpServer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EeveeTools/Database/DatabaseHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EeveeTools/Database/DatabaseHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +27,13 @@
       <option value="$PROJECT_DIR$/EeveeTools/Servers/WebSockets/WebSocketHandler.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Servers/WebSockets/WebSocketServer.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Database/DatabaseContext.cs" />
-      <option value="$PROJECT_DIR$/EeveeTools/Database/DatabaseHandler.cs" />
       <option value="$PROJECT_DIR$/EeveeTools.TestApp/Program.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Helpers/BanchoSerializer.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Helpers/UnixTime.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Helpers/CryptoHelper.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Servers/HTTP/AsyncHttpServer.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Extensions/HttpListenerExtensions.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Database/DatabaseHandler.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qnoHKhqXfW6wGPvtYSRn7kKsfa" />
@@ -82,13 +82,14 @@
       <updated>1617724629783</updated>
       <workItem from="1617724635870" duration="4096000" />
       <workItem from="1617742975240" duration="11000" />
+      <workItem from="1617743561697" duration="298000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -100,6 +101,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -112,10 +114,10 @@
           <line>15</line>
           <properties documentPath="D:\EeveeTools\EeveeTools.TestApp\Program.cs" initialLine="14" containingFunctionPresentation="method 'Main'">
             <startOffsets>
-              <option value="642" />
+              <option value="649" />
             </startOffsets>
             <endOffsets>
-              <option value="643" />
+              <option value="650" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="11" />

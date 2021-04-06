@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59b06552-40a3-4b8c-b385-6e0782b00cd5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EeveeTools.TestApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EeveeTools.TestApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EeveeTools/Database/DatabaseHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EeveeTools/Database/DatabaseHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EeveeTools/Helpers/BanchoSerializer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +32,7 @@
       <option value="$PROJECT_DIR$/EeveeTools/Database/DatabaseContext.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Database/DatabaseHandler.cs" />
       <option value="$PROJECT_DIR$/EeveeTools.TestApp/Program.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Helpers/BanchoSerializer.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qnoHKhqXfW6wGPvtYSRn7kKsfa" />
@@ -80,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617724629783</updated>
-      <workItem from="1617724635870" duration="2753000" />
+      <workItem from="1617724635870" duration="3100000" />
     </task>
     <servers />
   </component>
@@ -108,13 +107,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/EeveeTools.TestApp/Program.cs</url>
-          <line>14</line>
+          <line>15</line>
           <properties documentPath="D:\EeveeTools\EeveeTools.TestApp\Program.cs" initialLine="14" containingFunctionPresentation="method 'Main'">
             <startOffsets>
-              <option value="600" />
+              <option value="642" />
             </startOffsets>
             <endOffsets>
-              <option value="601" />
+              <option value="643" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="11" />

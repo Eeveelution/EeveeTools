@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59b06552-40a3-4b8c-b385-6e0782b00cd5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/EeveeTools/Helpers/BanchoSerializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EeveeTools/Servers/HTTP/AsyncHttpServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EeveeTools/Servers/HTTP/AsyncHttpServer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,10 +19,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9F5240BC-C4CF-446A-B700-9C62700FF1F1/E/MySqlDataReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/1D0/Task.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9F5240BC-C4CF-446A-B700-9C62700FF1F1/5F/Row.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -33,6 +31,9 @@
       <option value="$PROJECT_DIR$/EeveeTools/Database/DatabaseHandler.cs" />
       <option value="$PROJECT_DIR$/EeveeTools.TestApp/Program.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Helpers/BanchoSerializer.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Helpers/UnixTime.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Helpers/CryptoHelper.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Servers/HTTP/AsyncHttpServer.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qnoHKhqXfW6wGPvtYSRn7kKsfa" />
@@ -79,7 +80,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617724629783</updated>
-      <workItem from="1617724635870" duration="3100000" />
+      <workItem from="1617724635870" duration="4096000" />
+      <workItem from="1617742975240" duration="11000" />
     </task>
     <servers />
   </component>

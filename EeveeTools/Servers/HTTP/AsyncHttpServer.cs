@@ -48,7 +48,7 @@ namespace EeveeTools.Servers.HTTP {
             this._cancellationToken.Cancel();
         }
         /// <summary>
-        /// Void for Handling Connections and Invoking the `_asyncRequestHandler`
+        /// Void for Handling Connections and Invoking the <see cref="_asyncRequestHandler"/>
         /// </summary>
         /// <returns>Async Task</returns>
         private async Task HandleConnections() {

@@ -7,6 +7,13 @@ using MySqlConnector;
 
 namespace EeveeTools.Database {
     public class DatabaseHandler {
+        /// <summary>
+        /// Executes a Query asynchronously
+        /// </summary>
+        /// <param name="context">Database Context</param>
+        /// <param name="query">SQL</param>
+        /// <param name="parameters">Parameters</param>
+        /// <returns>awaitable Task</returns>
         public static async Task<IReadOnlyDictionary<string, object>[]> QueryAsync(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
             //Place to store Results
             List<IReadOnlyDictionary<string, object>> results = new();
@@ -46,7 +53,14 @@ namespace EeveeTools.Database {
             //Return Results
             return results.ToArray();
         }
-        public static async Task Insert(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
+        /// <summary>
+        /// Executes a Non Query Asynchonously
+        /// </summary>
+        /// <param name="context">Database Context</param>
+        /// <param name="query">SQL</param>
+        /// <param name="parameters">Parameters</param>
+        /// <returns>awaitable Task</returns>
+        public static async Task NonQueryAsync(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
             //Creates a new Connection
             await using MySqlConnection connection = new(context.GetConnectionString());
             //Open Connection

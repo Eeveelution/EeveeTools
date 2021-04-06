@@ -1,18 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using EeveeTools.Database;
 using EeveeTools.Extensions;
 using EeveeTools.Servers.HTTP;
 using EeveeTools.Servers.TCP;
+using MySqlConnector;
 
 namespace EeveeTools.TestApp {
     class Program {
-        static void Main(string[] args) {
-            AsyncHttpServer server = new("http://127.0.0.1:80/",
-            async (S, Context) => {
-                await Context.Response.WriteString("Hello!");
-            });
-            server.Start();
+        static async Task Main(string[] args) {
+            DatabaseContext context = new("root", "", "127.0.0.1", "flanderemod");
 
-            Console.ReadLine();
+            await DatabaseHandler.Insert(context, "INSERT INTO staff VALUES (@userid, @username, @status)", new []{ new MySqlParameter("@userid", 24), new MySqlParameter("@username", "Eevee"), new MySqlParameter("@status", "pog")});
         }
     }
 }

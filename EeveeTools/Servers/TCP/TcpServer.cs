@@ -29,10 +29,6 @@ namespace EeveeTools.Servers.TCP {
             this._tcpListener       = new TcpListener(IPAddress.Parse(location), port);
             this._cancellationToken = new CancellationTokenSource();
             this._clientHandlerType = clientHandlerType;
-            //Check if Type is valid
-            if (!clientHandlerType.IsAssignableFrom(typeof(TcpClientHandler))) {
-                //throw new Exception("You need to pass a class that is inherited by ClientHandler..");
-            }
         }
 
         public void Start() {

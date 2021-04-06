@@ -16,7 +16,9 @@ namespace EeveeTools.Servers.TCP {
         protected abstract void HandleData(byte[] data);
 
         public void HandleConnection() {
+            //Create Buffer to hold Data In
             byte[] readBuffer = new byte[4096];
+            //Read While Connected
             while (this.Client.Connected) {
                 if (this.Client.Available != 0 && this.Stream.DataAvailable && this.Stream.CanRead) {
                     int bytesRecieved = this.Stream.Read(readBuffer, 0, 4096);

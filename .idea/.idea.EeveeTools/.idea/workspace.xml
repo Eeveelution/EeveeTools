@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59b06552-40a3-4b8c-b385-6e0782b00cd5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/EeveeTools/Utilities/PollingJobScheduler/AsyncPollingScheduler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EeveeTools/Utilities/PollingJobScheduler/AsyncSchedulableJob.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EeveeTools/Utilities/PollingJobScheduler/Delegates.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EeveeTools/Database/DatabaseHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EeveeTools/Database/DatabaseHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +38,13 @@
       <option value="$PROJECT_DIR$/EeveeTools/Servers/HTTP/AsyncHttpServer.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Extensions/HttpListenerExtensions.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Database/DatabaseHandler.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Helpers/PollingScheduler.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Utilities/PollingScheduler.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Utilities/PollingJobScheduler/PollingScheduler.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Utilities/PollingJobScheduler/SchedulableJob.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Utilities/PollingJobScheduler/Delegates.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Utilities/PollingJobScheduler/AsyncSchedulableJob.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Utilities/PollingJobScheduler/AsyncPollingScheduler.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qnoHKhqXfW6wGPvtYSRn7kKsfa" />
@@ -85,6 +95,7 @@
       <workItem from="1617742975240" duration="11000" />
       <workItem from="1617743561697" duration="1040000" />
       <workItem from="1617796433112" duration="34000" />
+      <workItem from="1617831368328" duration="1283000" />
     </task>
     <servers />
   </component>
@@ -123,19 +134,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpClientHandler.cs</url>
-          <line>17</line>
-          <properties documentPath="D:\EeveeTools\EeveeTools\Servers\TCP\TcpClientHandler.cs" initialLine="17" containingFunctionPresentation="method 'HandleConnection'">
-            <startOffsets>
-              <option value="483" />
-            </startOffsets>
-            <endOffsets>
-              <option value="484" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

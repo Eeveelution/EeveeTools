@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MySqlConnector;
 
 namespace EeveeTools.Database {
-    public class DatabaseHandler {
+    public static class DatabaseHandler {
         /// <summary>
         /// Executes a Query asynchronously
         /// </summary>

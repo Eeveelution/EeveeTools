@@ -23,7 +23,7 @@ namespace EeveeTools.Utilities.PollingJobScheduler {
         /// <summary>
         /// List of Microtasks to execute next Cycle
         /// </summary>
-        private readonly BlockingCollection<Task> _tasks = new();
+        private readonly BlockingCollection<Delegates.VoidDelegate> _tasks = new();
         /// <summary>
         /// Job Scheduler which Polls Events to execute (Microtasks) and Jobs to Execute
         /// </summary>
@@ -35,23 +35,14 @@ namespace EeveeTools.Utilities.PollingJobScheduler {
         /// Queues a Microtask to be run next Cycle
         /// </summary>
         /// <param name="task">Task to be Run</param>
-        public void QueueMicrotask(Task task) {
+        public void QueueMicrotask(Delegates.VoidDelegate task) {
             this._tasks.Add(task);
         }
         /// <summary>
-        /// Queues a Microtask to be run next Cycle
+        /// Adds a Job to the Scheduler
         /// </summary>
-        /// <param name="task">Task to be Run</param>
-        public void QueueMicrotask(Action task) {
-            this._tasks.Add(Task.Run(task));
-        }
-        /// <summary>
-        /// Queues a Microtask to be run next Cycle
-        /// </summary>
-        /// <param name="task">Task to be Run</param>
-        public void QueueMicrotask(Delegates.VoidDelegate task) {
-            this._tasks.Add(Task.Run(task.Invoke));
-        }
+        /// <param name="job">Schedulable Job</param>
+        public void AddJob(AsyncSchedulableJob job) => this._jobs.Add(job);
         /// <summary>
         /// Runs the Scheduler
         /// </summary>
@@ -60,9 +51,10 @@ namespace EeveeTools.Utilities.PollingJobScheduler {
             while (this._continuePolling) {
                 await Task.Delay(this._pollingInterval);
 
-                foreach (Task task in this._tasks.GetConsumingEnumerable()) {
-                    Task.Run(async () => await task);
-                }
+                if(this._tasks.Count > 0)
+                    foreach (Delegates.VoidDelegate task in this._tasks.GetConsumingEnumerable()) {
+                        Task.Run(() => task.Invoke());
+                    }
 
                 if (this._jobs.Count != 0) {
                     foreach (AsyncSchedulableJob job in this._jobs.Where(job => DateTime.Now > job.NextExecutionTime)) {

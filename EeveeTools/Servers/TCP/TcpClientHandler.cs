@@ -6,6 +6,8 @@ namespace EeveeTools.Servers.TCP {
         protected TcpClient     Client;
         protected NetworkStream Stream;
 
+        private object _sendLock = new();
+
         public void HandleNew(TcpClient client) {
             this.Client = client;
             this.Stream = this.Client.GetStream();
@@ -31,5 +33,9 @@ namespace EeveeTools.Servers.TCP {
             }
         }
 
+        public void SendData(byte[] data) {
+            lock(this._sendLock)
+                this.Stream.Write(data);
+        }
     }
 }

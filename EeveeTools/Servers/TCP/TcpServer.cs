@@ -7,6 +7,16 @@ using System.Threading.Tasks;
 namespace EeveeTools.Servers.TCP {
     public class TcpServer {
         /// <summary>
+        /// Provides arguments for the OnClientConnected event
+        /// </summary>
+        public struct OnClientConnectedEventArgs {
+            public TcpClientHandler AcceptedClient;
+        }
+        /// <summary>
+        /// The actual event... not much more
+        /// </summary>
+        public delegate void OnClientConnected(OnClientConnectedEventArgs args);
+        /// <summary>
         /// TCP Listener that is Responsible for Accepting Clients
         /// </summary>
         private readonly TcpListener _tcpListener;
@@ -18,7 +28,10 @@ namespace EeveeTools.Servers.TCP {
         /// The Type of class to instanciate and
         /// </summary>
         private readonly Type _clientHandlerType;
-
+        /// <summary>
+        /// Gets Fired every time a new Connection is accepted
+        /// </summary>
+        public event OnClientConnected OnClientConnectedEvent;
         /// <summary>
         /// Creates a TCP Server with Handlers at `Location`:`Port`
         /// </summary>
@@ -45,7 +58,10 @@ namespace EeveeTools.Servers.TCP {
                 //Create Client Handler
                 dynamic connectionHandler = Activator.CreateInstance(this._clientHandlerType);
                 //Create new Thread and Start
-                new Thread(() => { connectionHandler?.HandleNew(acceptedClient); }).Start();
+                new Thread(() => {
+                    this.OnClientConnectedEvent?.Invoke(new OnClientConnectedEventArgs { AcceptedClient = connectionHandler });
+                    connectionHandler?.HandleNew(acceptedClient);
+                }).Start();
             }
         }
     }

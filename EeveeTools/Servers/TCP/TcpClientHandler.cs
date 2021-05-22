@@ -1,5 +1,6 @@
 using System;
 using System.Net.Sockets;
+using System.Threading;
 
 namespace EeveeTools.Servers.TCP {
     public abstract class TcpClientHandler {
@@ -18,24 +19,36 @@ namespace EeveeTools.Servers.TCP {
         protected abstract void HandleData(byte[] data);
 
         public void HandleConnection() {
-            //Create Buffer to hold Data In
-            byte[] readBuffer = new byte[4096];
-            //Read While Connected
-            while (this.Client.Connected) {
-                if (this.Client.Available != 0 && this.Stream.DataAvailable && this.Stream.CanRead) {
-                    int bytesRecieved = this.Stream.Read(readBuffer, 0, 4096);
-                    //Cut Buffer
-                    byte[] destinationBuffer = new byte[bytesRecieved];
-                    Buffer.BlockCopy(readBuffer, 0, destinationBuffer, 0, bytesRecieved);
-                    //Invoke Method
-                    this.HandleData(destinationBuffer);
+            try {
+                //Create Buffer to hold Data In
+                byte[] readBuffer = new byte[4096];
+                //Read While Connected
+                while (this.Client.Connected) {
+                    if (this.Client.Available != 0 && this.Stream.DataAvailable && this.Stream.CanRead) {
+                        int bytesRecieved = this.Stream.Read(readBuffer, 0, 4096);
+                        //Cut Buffer
+                        byte[] destinationBuffer = new byte[bytesRecieved];
+                        Buffer.BlockCopy(readBuffer, 0, destinationBuffer, 0, bytesRecieved);
+                        //Invoke Method
+                        this.HandleData(destinationBuffer);
+                    }
+                    Thread.Sleep(25);
                 }
+            }
+            catch {
+                /**/
             }
         }
 
         public void SendData(byte[] data) {
-            lock(this._sendLock)
-                this.Stream.Write(data);
+            try {
+                lock (this._sendLock)
+                    this.Stream.Write(data);
+            }
+            catch {
+                this.Stream.Dispose();
+                this.Client.Dispose();
+            }
         }
     }
 }

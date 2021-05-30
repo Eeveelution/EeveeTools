@@ -17,6 +17,7 @@ namespace EeveeTools.Servers.TCP {
         }
 
         protected abstract void HandleData(byte[] data);
+        protected abstract void HandleDisconnect();
 
         public void HandleConnection() {
             try {
@@ -34,6 +35,7 @@ namespace EeveeTools.Servers.TCP {
                     }
                     Thread.Sleep(25);
                 }
+                this.HandleDisconnect();
             }
             catch {
                 /**/

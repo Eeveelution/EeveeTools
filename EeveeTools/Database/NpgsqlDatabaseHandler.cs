@@ -2,10 +2,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Common;
 using System.Threading.Tasks;
-using MySqlConnector;
+using Npgsql;
+using Npgsql.Schema;
 
 namespace EeveeTools.Database {
-    public static class MySqlDatabaseHandler {
+    public static class NpgsqlDatabaseHandler {
         /// <summary>
         /// Executes a Query asynchronously
         /// </summary>
@@ -13,22 +14,22 @@ namespace EeveeTools.Database {
         /// <param name="query">SQL</param>
         /// <param name="parameters">Parameters</param>
         /// <returns>awaitable Task</returns>
-        public static async Task<IReadOnlyDictionary<string, object>[]> MySqlQueryAsync(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
+        public static async Task<IReadOnlyDictionary<string, object>[]> NpgsqlQueryAsync(DatabaseContext context, string query, NpgsqlParameter[] parameters = null) {
             //Place to store Results
             List<IReadOnlyDictionary<string, object>> results = new();
             //Create and Open Connection
-            MySqlConnection connection = new(context.GetMySqlConnectionString());
+            NpgsqlConnection connection = new(context.GetNpgsqlConnectionString());
             await connection.OpenAsync();
             //Create command with `query` Command Text
-            MySqlCommand cmd = connection.CreateCommand();
+            NpgsqlCommand cmd = connection.CreateCommand();
             cmd.CommandText = query;
             //Add Parameters if present
             if(parameters != null)
                 cmd.Parameters.AddRange(parameters);
             //Execute Data Reader
-            await using MySqlDataReader reader = await cmd.ExecuteReaderAsync();
+            await using NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
             //Read Columns
-            ReadOnlyCollection<DbColumn> columns = await reader.GetColumnSchemaAsync();
+            ReadOnlyCollection<NpgsqlDbColumn> columns = await reader.GetColumnSchemaAsync();
             //Read Results
             while (await reader.ReadAsync()) {
                 //Place to store Result
@@ -40,7 +41,7 @@ namespace EeveeTools.Database {
                 //Iterate over each column
                 for (int i = 0; i < columns.Count; i++) {
                     //Get Column
-                    DbColumn column = columns[i];
+                    NpgsqlDbColumn column = columns[i];
                     //Add Result
                     result.Add(column.ColumnName, values[i]);
                 }
@@ -58,22 +59,22 @@ namespace EeveeTools.Database {
         /// <param name="context">Database Context</param>
         /// <param name="query">SQL</param>
         /// <param name="parameters">Parameters</param>
-        public static IReadOnlyDictionary<string, object>[] MySqlQuery(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
+        public static IReadOnlyDictionary<string, object>[] NpgsqlQuery(DatabaseContext context, string query, NpgsqlParameter[] parameters = null) {
             //Place to store Results
             List<IReadOnlyDictionary<string, object>> results = new();
             //Create and Open Connection
-            MySqlConnection connection = new(context.GetMySqlConnectionString());
+            NpgsqlConnection connection = new(context.GetNpgsqlConnectionString());
             connection.Open();
             //Create command with `query` Command Text
-            MySqlCommand cmd = connection.CreateCommand();
+            NpgsqlCommand cmd = connection.CreateCommand();
             cmd.CommandText = query;
             //Add Parameters if present
             if(parameters != null)
                 cmd.Parameters.AddRange(parameters);
             //Execute Data Reader
-            using MySqlDataReader reader = cmd.ExecuteReader();
+            using NpgsqlDataReader reader = cmd.ExecuteReader();
             //Read Columns
-            ReadOnlyCollection<DbColumn> columns = reader.GetColumnSchema();
+            ReadOnlyCollection<NpgsqlDbColumn> columns = reader.GetColumnSchema();
             //Read Results
             while (reader.Read()) {
                 //Place to store Result
@@ -85,7 +86,7 @@ namespace EeveeTools.Database {
                 //Iterate over each column
                 for (int i = 0; i < columns.Count; i++) {
                     //Get Column
-                    DbColumn column = columns[i];
+                    NpgsqlDbColumn column = columns[i];
                     //Add Result
                     result.Add(column.ColumnName, values[i]);
                 }
@@ -104,13 +105,13 @@ namespace EeveeTools.Database {
         /// <param name="query">SQL</param>
         /// <param name="parameters">Parameters</param>
         /// <returns>awaitable Task</returns>
-        public static void MySqlNonQuery(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
+        public static void NpgsqlNonQuery(DatabaseContext context, string query, NpgsqlParameter[] parameters = null) {
             //Creates a new Connection
-            using MySqlConnection connection = new(context.GetMySqlConnectionString());
+            using NpgsqlConnection connection = new(context.GetNpgsqlConnectionString());
             //Open Connection
             connection.Open();
             //Creates a Command and assings the Command Text to desired Query
-            MySqlCommand command = connection.CreateCommand();
+            NpgsqlCommand command = connection.CreateCommand();
             command.CommandText = query;
             //Add Parameters if there arent any
             if(parameters != null)
@@ -127,13 +128,13 @@ namespace EeveeTools.Database {
         /// <param name="query">SQL</param>
         /// <param name="parameters">Parameters</param>
         /// <returns>awaitable Task</returns>
-        public static async Task MySqlNonQueryAsync(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
+        public static async Task NpgsqlNonQueryAsync(DatabaseContext context, string query, NpgsqlParameter[] parameters = null) {
             //Creates a new Connection
-            await using MySqlConnection connection = new(context.GetMySqlConnectionString());
+            await using NpgsqlConnection connection = new(context.GetNpgsqlConnectionString());
             //Open Connection
             await connection.OpenAsync();
             //Creates a Command and assings the Command Text to desired Query
-            MySqlCommand command = connection.CreateCommand();
+            NpgsqlCommand command = connection.CreateCommand();
             command.CommandText = query;
             //Add Parameters if there arent any
             if(parameters != null)

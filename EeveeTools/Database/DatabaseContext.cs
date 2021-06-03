@@ -7,6 +7,7 @@ namespace EeveeTools.Database {
             this._location = location;
             this._database = database;
         }
-        public string GetConnectionString() => $"server={this._location};userid={this._username};password={this._password};database={this._database}";
+        public string GetMySqlConnectionString() => $"server={this._location};userid={this._username};password={this._password};database={this._database}";
+        public string GetNpgsqlConnectionString() => $"Host={this._location};Username={this._username};Password={this._password};Database={this._database}";
     }
 }

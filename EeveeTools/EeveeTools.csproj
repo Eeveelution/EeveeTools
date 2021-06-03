@@ -2,6 +2,14 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <Title>EeveeTools</Title>
+        <Authors>Eeveelution</Authors>
+        <Description>Eevee's smol component Library with things Eevee uses frequently</Description>
+        <Copyright>Copyright (c) 2021 Eevee</Copyright>
+        <PackageProjectUrl>https://github.com/Eeveelution/EeveeTools/</PackageProjectUrl>
+        <PackageLicense>https://github.com/Eeveelution/EeveeTools/blob/master/LICENSE</PackageLicense>
+        <RepositoryUrl>https://github.com/Eeveelution/EeveeTools/</RepositoryUrl>
+        <PackageTags>component library eeveelution eevee </PackageTags>
     </PropertyGroup>
 
     <ItemGroup>

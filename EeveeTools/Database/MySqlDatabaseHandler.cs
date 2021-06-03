@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using MySqlConnector;
 
 namespace EeveeTools.Database {
-    public static class DatabaseHandler {
+    public static class MySqlDatabaseHandler {
         /// <summary>
         /// Executes a Query asynchronously
         /// </summary>
@@ -13,7 +13,7 @@ namespace EeveeTools.Database {
         /// <param name="query">SQL</param>
         /// <param name="parameters">Parameters</param>
         /// <returns>awaitable Task</returns>
-        public static async Task<IReadOnlyDictionary<string, object>[]> QueryAsync(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
+        public static async Task<IReadOnlyDictionary<string, object>[]> MySqlQueryAsync(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
             //Place to store Results
             List<IReadOnlyDictionary<string, object>> results = new();
             //Create and Open Connection
@@ -58,7 +58,7 @@ namespace EeveeTools.Database {
         /// <param name="context">Database Context</param>
         /// <param name="query">SQL</param>
         /// <param name="parameters">Parameters</param>
-        public static IReadOnlyDictionary<string, object>[] Query(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
+        public static IReadOnlyDictionary<string, object>[] MySqlQuery(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
             //Place to store Results
             List<IReadOnlyDictionary<string, object>> results = new();
             //Create and Open Connection
@@ -104,7 +104,7 @@ namespace EeveeTools.Database {
         /// <param name="query">SQL</param>
         /// <param name="parameters">Parameters</param>
         /// <returns>awaitable Task</returns>
-        public static void NonQuery(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
+        public static void MySqlNonQuery(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
             //Creates a new Connection
             using MySqlConnection connection = new(context.GetConnectionString());
             //Open Connection
@@ -127,7 +127,7 @@ namespace EeveeTools.Database {
         /// <param name="query">SQL</param>
         /// <param name="parameters">Parameters</param>
         /// <returns>awaitable Task</returns>
-        public static async Task NonQueryAsync(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
+        public static async Task MySqlNonQueryAsync(DatabaseContext context, string query, MySqlParameter[] parameters = null) {
             //Creates a new Connection
             await using MySqlConnection connection = new(context.GetConnectionString());
             //Open Connection

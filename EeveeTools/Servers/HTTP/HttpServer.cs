@@ -22,6 +22,11 @@ namespace EeveeTools.Servers.HTTP {
         /// </summary>
         private readonly Action<string, HttpListenerContext> _requestHandler;
         /// <summary>
+        /// Sees if the Server has been started and is listening for connection
+        /// </summary>
+        public bool IsRunning => this._listener.IsListening;
+
+        /// <summary>
         /// Creates a Async HTTP Server on `Location` and Invokes `AsyncRequestHandler` on Request
         /// </summary>
         /// <param name="location">Where to Run the Server</param>
@@ -53,14 +58,16 @@ namespace EeveeTools.Servers.HTTP {
         /// <returns>Async Task</returns>
         private async Task HandleConnections() {
             try {
-                //Grab Context
-                HttpListenerContext context = await this._listener.GetContextAsync();
-                //Check for Null
-                if (context.Request.Url is not null) {
-                    //Get URL
-                    string url = new Uri(context.Request.Url.OriginalString).AbsolutePath;
-                    //Invoke Method
-                    this._requestHandler(url, context);
+                while (!this._cancellationToken.IsCancellationRequested) {
+                    //Grab Context
+                    HttpListenerContext context = await this._listener.GetContextAsync();
+                    //Check for Null
+                    if (context.Request.Url is not null) {
+                        //Get URL
+                        string url = new Uri(context.Request.Url.OriginalString).AbsolutePath;
+                        //Invoke Method
+                        this._requestHandler(url, context);
+                    }
                 }
             }
             catch (OperationCanceledException) {

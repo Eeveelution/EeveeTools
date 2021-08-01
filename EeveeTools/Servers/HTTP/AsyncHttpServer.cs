@@ -53,14 +53,16 @@ namespace EeveeTools.Servers.HTTP {
         /// <returns>Async Task</returns>
         private async Task HandleConnections() {
             try {
-                //Grab Context
-                HttpListenerContext context = await this._listener.GetContextAsync();
-                //Check for Null
-                if (context.Request.Url is not null) {
-                    //Get URL
-                    string url = new Uri(context.Request.Url.OriginalString).AbsolutePath;
-                    //Invoke Method (NOT AWAITED FOR SPEED)
-                    this._asyncRequestHandler(url, context);
+                while (!this._cancellationToken.IsCancellationRequested) {
+                    //Grab Context
+                    HttpListenerContext context = await this._listener.GetContextAsync();
+                    //Check for Null
+                    if (context.Request.Url is not null) {
+                        //Get URL
+                        string url = new Uri(context.Request.Url.OriginalString).AbsolutePath;
+                        //Invoke Method (NOT AWAITED FOR SPEED)
+                        this._asyncRequestHandler(url, context);
+                    }
                 }
             }
             catch (OperationCanceledException) {

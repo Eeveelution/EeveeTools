@@ -10,6 +10,10 @@ namespace EeveeTools.Servers.HTTP {
     /// </summary>
     public class AsyncHttpServer {
         /// <summary>
+        /// Is the Server running?
+        /// </summary>
+        public bool IsRunning => this._listener.IsListening;
+        /// <summary>
         /// Http Listener, Runs the Server
         /// </summary>
         private readonly HttpListener            _listener;

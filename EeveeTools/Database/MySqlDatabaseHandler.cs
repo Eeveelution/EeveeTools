@@ -42,7 +42,8 @@ namespace EeveeTools.Database {
                     //Get Column
                     DbColumn column = columns[i];
                     //Add Result
-                    result.Add(column.ColumnName, values[i]);
+                    if(!result.ContainsKey(column.ColumnName))
+                        result.Add(column.ColumnName, values[i]);
                 }
                 //Add Result to Results
                 results.Add(result);
@@ -87,7 +88,8 @@ namespace EeveeTools.Database {
                     //Get Column
                     DbColumn column = columns[i];
                     //Add Result
-                    result.Add(column.ColumnName, values[i]);
+                    if(!result.ContainsKey(column.ColumnName))
+                        result.Add(column.ColumnName, values[i]);
                 }
                 //Add Result to Results
                 results.Add(result);

@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59b06552-40a3-4b8c-b385-6e0782b00cd5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EeveeTools.TestApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EeveeTools.TestApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EeveeTools/Utilities/PollingJobScheduler/AsyncPollingScheduler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EeveeTools/Utilities/PollingJobScheduler/AsyncPollingScheduler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpWorker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EeveeTools/Servers/TCP/WorkerTcpServer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpClientHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpClientHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpServer.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,14 +21,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9F5240BC-C4CF-446A-B700-9C62700FF1F1/E/MySqlDataReader.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/1D0/Task.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9F5240BC-C4CF-446A-B700-9C62700FF1F1/5F/Row.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpClientHandler.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpServer.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Servers/WebSockets/WebSocketHandler.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Servers/WebSockets/WebSocketServer.cs" />
@@ -43,6 +41,9 @@
       <option value="$PROJECT_DIR$/EeveeTools/Utilities/PollingJobScheduler/AsyncSchedulableJob.cs" />
       <option value="$PROJECT_DIR$/EeveeTools.TestApp/Program.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Utilities/PollingJobScheduler/AsyncPollingScheduler.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpWorker.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpClientHandler.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Servers/TCP/WorkerTcpServer.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qnoHKhqXfW6wGPvtYSRn7kKsfa" />
@@ -94,6 +95,7 @@
       <workItem from="1617743561697" duration="1040000" />
       <workItem from="1617796433112" duration="34000" />
       <workItem from="1617831368328" duration="1929000" />
+      <workItem from="1643996575061" duration="684000" />
     </task>
     <servers />
   </component>

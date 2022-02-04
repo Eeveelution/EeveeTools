@@ -1,5 +1,5 @@
 namespace EeveeTools.Servers.TCP {
-    public interface TcpClientHandler {
-
+    public class TcpWorker {
+        
     }
 }

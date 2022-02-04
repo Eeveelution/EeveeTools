@@ -7,6 +7,7 @@ namespace EeveeTools.Servers.TCP {
         protected TcpClient Client { get; set; }
         protected NetworkStream ClientStream { get; set; }
         protected ConcurrentQueue<byte[]> SendQueue { get; set; }
+        protected object StreamLock { get; set; }
 
         protected TcpClientConfig ClientConfig { get; set; }
 
@@ -26,9 +27,15 @@ namespace EeveeTools.Servers.TCP {
             this.Client       = client;
             this.ClientStream = client.GetStream();
             this.SendQueue    = new ConcurrentQueue<byte[]>();
+            this.StreamLock   = new object();
 
             this.ClientConfig = clientConfig;
         }
+        /// <summary>
+        /// Used to Authenticate the client and whether or not it should be added to the Process list
+        /// </summary>
+        /// <returns>Whether it should be processed further or not</returns>
+        public virtual bool Authenticate() { return true; }
 
         internal virtual void HandleClient() {
             //Kill Client if it times out
@@ -59,11 +66,15 @@ namespace EeveeTools.Servers.TCP {
 
         protected virtual void SendOutgoing() {
             try {
-                while (this.SendQueue.TryDequeue(out byte[] toSend)) {
-                    this.ClientStream.Write(toSend, 0, toSend.Length);
-                    this.ClientStream.Flush();
+                if (!this.SendQueue.IsEmpty) {
+                    lock (this.StreamLock) {
+                        while (this.SendQueue.TryDequeue(out byte[] toSend)) {
+                            this.ClientStream.Write(toSend, 0, toSend.Length);
+                            this.ClientStream.Flush();
 
-                    this.LastPingTime = DateTime.Now;
+                            this.LastPingTime = DateTime.Now;
+                        }
+                    }
                 }
 
                 //If we've exceeded 10 seconds without sending anything, send a ping

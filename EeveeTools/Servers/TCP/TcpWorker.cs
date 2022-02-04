@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 
 namespace EeveeTools.Servers.TCP {
-    public class TcpWorker<pClientHandler> where pClientHandler : ITcpClientHandler, new() {
+    public class TcpWorker<pClientHandler> where pClientHandler : class, ITcpClientHandler, new() {
         internal int Id;
 
         internal int      LastProcessedIndex;
@@ -31,7 +31,10 @@ namespace EeveeTools.Servers.TCP {
 
         private void Work() {
             while (this._continueWorking) {
+                pClientHandler client = this._belongingServer.GetProcessableClient(this);
+                this.LastClientHandleRequest = DateTime.Now;
 
+                client?.HandleClient();
             }
         }
     }

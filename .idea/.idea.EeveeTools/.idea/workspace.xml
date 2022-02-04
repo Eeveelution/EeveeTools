@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59b06552-40a3-4b8c-b385-6e0782b00cd5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/EeveeTools/Helpers/ThreadHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EeveeTools/Servers/TCP/ITcpClientHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpClientConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpServerConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EeveeTools/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpClientHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EeveeTools/Servers/TCP/ITcpClientHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EeveeTools/Servers/TCP/ITcpClientHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpServerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpServerConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpWorker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpWorker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EeveeTools/Servers/TCP/WorkerTcpServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EeveeTools/Servers/TCP/WorkerTcpServer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EeveeTools/license.txt" beforeDir="false" afterPath="$PROJECT_DIR$/EeveeTools/license.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,13 +40,13 @@
       <option value="$PROJECT_DIR$/EeveeTools.TestApp/Program.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Utilities/PollingJobScheduler/AsyncPollingScheduler.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/license.txt" />
-      <option value="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpWorker.cs" />
-      <option value="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpServerConfig.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Helpers/ThreadHelper.cs" />
-      <option value="$PROJECT_DIR$/EeveeTools/Servers/TCP/WorkerTcpServer.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpClientHandler.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpClientConfig.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpServerConfig.cs" />
       <option value="$PROJECT_DIR$/EeveeTools/Servers/TCP/ITcpClientHandler.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Servers/TCP/TcpWorker.cs" />
+      <option value="$PROJECT_DIR$/EeveeTools/Servers/TCP/WorkerTcpServer.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qnoHKhqXfW6wGPvtYSRn7kKsfa" />
@@ -102,7 +98,7 @@
       <workItem from="1617743561697" duration="1040000" />
       <workItem from="1617796433112" duration="34000" />
       <workItem from="1617831368328" duration="1929000" />
-      <workItem from="1643996575061" duration="2665000" />
+      <workItem from="1643996575061" duration="3901000" />
     </task>
     <servers />
   </component>

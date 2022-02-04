@@ -3,7 +3,11 @@ namespace EeveeTools.Servers.TCP {
         /// <summary>
         /// Max Amount of Client Workers
         /// </summary>
-        public int MaxClientWorkers       = 2;
+        public int MaxClientWorkers = 2;
+        /// <summary>
+        /// How many Client Workers to spin up when the server just starts
+        /// </summary>
+        public int InitialClientWorkers = 1;
         /// <summary>
         /// How many times are the Clients supposed to get Updated
         /// </summary>

@@ -7,6 +7,7 @@ namespace EeveeTools.Servers.TCP {
 
         internal int      LastProcessedIndex;
         internal DateTime LastClientHandleRequest;
+        internal int      ProcessedCount;
 
         private Thread _workerThread;
         private bool   _continueWorking;

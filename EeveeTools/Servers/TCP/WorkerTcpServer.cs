@@ -57,7 +57,7 @@ namespace EeveeTools.Servers.TCP {
 
             ThreadHelper.Go(() => {
                 while (this._continueListening) {
-
+                    //TODO: add worker checking and stuff
                 }
             });
 
@@ -69,7 +69,9 @@ namespace EeveeTools.Servers.TCP {
                     client.Initialize(newClient, this.ClientConfig);
 
                     if (client.Authenticate()) {
-                        this._clients.Add(client);
+                        lock (this._clientLock) {
+                            this._clients.Add(client);
+                        }
                     }
                 });
             }
